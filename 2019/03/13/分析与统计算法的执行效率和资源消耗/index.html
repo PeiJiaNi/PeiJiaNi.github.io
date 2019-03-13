@@ -96,18 +96,19 @@
 
 
 
-  <meta name="description" content="算法定义、特性及要求1、算法定义算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作。 2、算法特性1、输入输出 算法有零个或多个输入，至少有一个或多个输出。 2、有穷性 算法在执行有限的步骤之后，自动结束而不会出现无限循环，并且每一个步骤在可接受的时间内完成。 3、确定性 算法的每一步骤都具有确定的含义，不会出现二义性。（同入同出）。 4、可行性 算法">
-<meta name="keywords" content="-数据结构与算法">
+  <meta name="description" content="分析与统计算法的执行效率和资源消耗 我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”快“，占用的内存空间更“少”，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。 闲话少说，现在让我们通过一个小案例开始吧！ Boss:小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法定义、特性及要求">
-<meta property="og:url" content="https://PeiJiaNi.github.io/2019/03/12/算法定义、特性及要求/index.html">
+<meta property="og:title" content="分析与统计算法的执行效率和资源消耗">
+<meta property="og:url" content="https://PeiJiaNi.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/index.html">
 <meta property="og:site_name" content="Voldemort的博客">
-<meta property="og:description" content="算法定义、特性及要求1、算法定义算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作。 2、算法特性1、输入输出 算法有零个或多个输入，至少有一个或多个输出。 2、有穷性 算法在执行有限的步骤之后，自动结束而不会出现无限循环，并且每一个步骤在可接受的时间内完成。 3、确定性 算法的每一步骤都具有确定的含义，不会出现二义性。（同入同出）。 4、可行性 算法">
+<meta property="og:description" content="分析与统计算法的执行效率和资源消耗 我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”快“，占用的内存空间更“少”，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。 闲话少说，现在让我们通过一个小案例开始吧！ Boss:小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-12T13:54:31.327Z">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg">
+<meta property="og:updated_time" content="2019-03-13T11:52:11.038Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法定义、特性及要求">
-<meta name="twitter:description" content="算法定义、特性及要求1、算法定义算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作。 2、算法特性1、输入输出 算法有零个或多个输入，至少有一个或多个输出。 2、有穷性 算法在执行有限的步骤之后，自动结束而不会出现无限循环，并且每一个步骤在可接受的时间内完成。 3、确定性 算法的每一步骤都具有确定的含义，不会出现二义性。（同入同出）。 4、可行性 算法">
+<meta name="twitter:title" content="分析与统计算法的执行效率和资源消耗">
+<meta name="twitter:description" content="分析与统计算法的执行效率和资源消耗 我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”快“，占用的内存空间更“少”，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。 闲话少说，现在让我们通过一个小案例开始吧！ Boss:小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！">
+<meta name="twitter:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg">
 
 
 
@@ -116,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="https://PeiJiaNi.github.io/2019/03/12/算法定义、特性及要求/">
+  <link rel="canonical" href="https://PeiJiaNi.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/">
 
 
 
@@ -126,7 +127,7 @@
   };
 </script>
 
-  <title>算法定义、特性及要求 | Voldemort的博客</title>
+  <title>分析与统计算法的执行效率和资源消耗 | Voldemort的博客</title>
   
 
 
@@ -362,7 +363,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://PeiJiaNi.github.io/2019/03/12/算法定义、特性及要求/">
+    <link itemprop="mainEntityOfPage" href="https://PeiJiaNi.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PeiJiaNi">
@@ -379,7 +380,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法定义、特性及要求
+          <h1 class="post-title" itemprop="name headline">分析与统计算法的执行效率和资源消耗
 
               
             
@@ -405,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2019-03-12 21:37:01 / 修改时间：21:54:31" itemprop="dateCreated datePublished" datetime="2019-03-12T21:37:01+08:00">2019-03-12</time>
+              <time title="创建时间：2019-03-13 19:43:47 / 修改时间：19:52:11" itemprop="dateCreated datePublished" datetime="2019-03-13T19:43:47+08:00">2019-03-13</time>
             
 
             
@@ -427,8 +428,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2019/03/12/算法定义、特性及要求/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/12/算法定义、特性及要求/" itemprop="commentCount"></span>
+                <a href="/2019/03/13/分析与统计算法的执行效率和资源消耗/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/13/分析与统计算法的执行效率和资源消耗/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -436,7 +437,7 @@
 
           
           
-            <span id="/2019/03/12/算法定义、特性及要求/" class="leancloud_visitors" data-flag-title="算法定义、特性及要求">
+            <span id="/2019/03/13/分析与统计算法的执行效率和资源消耗/" class="leancloud_visitors" data-flag-title="分析与统计算法的执行效率和资源消耗">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -467,29 +468,10 @@
       
 
       
-        <h1><span id="算法定义-特性及要求">算法定义、特性及要求</span></h1><h2><span id="1-算法定义">1、算法定义</span></h2><p>算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作。</p>
-<h2><span id="2-算法特性">2、算法特性</span></h2><p>1、输入输出</p>
-<p>算法有零个或多个输入，至少有一个或多个输出。</p>
-<p>2、有穷性</p>
-<p>算法在执行有限的步骤之后，自动结束而不会出现无限循环，并且每一个步骤在可接受的时间内完成。</p>
-<p>3、确定性</p>
-<p>算法的每一步骤都具有确定的含义，不会出现二义性。（同入同出）。</p>
-<p>4、可行性</p>
-<p>算法的每一步必须是可行的，也就是说，每一步都能够通过执行有限次数完成。</p>
-<a id="more"></a>
-<h2><span id="3-算法设计的要求">3、算法设计的要求</span></h2><p>1、正确性</p>
-<p>算法的正确性是指算法至少应具有输入、输出及加工处理无歧义性、能正确反映问题需求、能得到问题的正确答案（即输入输出、确定性以及能解决问题）</p>
-<ul>
-<li>没有语法错误</li>
-<li>对于合法的输入数据能够产生满足要求的输出结果</li>
-<li>对于非法的输入数据能够得出满足规格说明的结果(衡量标准)</li>
-<li>对于精心挑选的，甚至刁难的测试数据都有满足要求的输出结果</li>
-</ul>
-<p>2、可读性</p>
-<p>方便阅读、理解与交流</p>
-<p>3、健壮性</p>
-<p>当输入数据不合法时，算法能做出相关处理，而不是产生异常或莫名其妙的结果</p>
-<p>4、时间效率高和存储量低（空间效率高）</p>
+        <h1><span id="分析与统计算法的执行效率和资源消耗">分析与统计算法的执行效率和资源消耗</span></h1><p> 我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”<strong>快</strong>“，占用的内存空间更<strong>“少”</strong>，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。</p>
+<p>闲话少说，现在让我们通过一个小案例开始吧！</p>
+<p>Boss:小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！</p>
+<p><img src="/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg" alt width="60%/"></p>
 
       
     </div>
@@ -511,12 +493,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/数据结构与算法/" rel="tag"># -数据结构与算法</a>
-          
-        </div>
-      
 
       
       
@@ -526,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/11/数据结构基本概念/" rel="next" title="数据结构基本概念">
-                <i class="fa fa-chevron-left"></i> 数据结构基本概念
+              <a href="/2019/03/12/算法定义、特性及要求/" rel="next" title="算法定义、特性及要求">
+                <i class="fa fa-chevron-left"></i> 算法定义、特性及要求
               </a>
             
           </div>
@@ -535,10 +511,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/13/分析与统计算法的执行效率和资源消耗/" rel="prev" title="分析与统计算法的执行效率和资源消耗">
-                分析与统计算法的执行效率和资源消耗 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -674,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">算法定义、特性及要求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">1、算法定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">2、算法特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">3、算法设计的要求</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">分析与统计算法的执行效率和资源消耗</span></a></li></ol></div>
             
 
           </div>
