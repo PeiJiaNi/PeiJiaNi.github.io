@@ -403,7 +403,7 @@
                 
               
 
-              <time title="创建时间：2019-03-13 19:43:47 / 修改时间：21:41:45" itemprop="dateCreated datePublished" datetime="2019-03-13T19:43:47+08:00">2019-03-13</time>
+              <time title="创建时间：2019-03-13 19:43:47 / 修改时间：21:45:13" itemprop="dateCreated datePublished" datetime="2019-03-13T19:43:47+08:00">2019-03-13</time>
             
 
             
@@ -467,49 +467,38 @@
       
         
           
-            <p>我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”快”，占用的内存空间更“少”，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。</p>
+            <h1><span id="分析与统计算法的执行效率和资源消耗">分析与统计算法的执行效率和资源消耗</span></h1><p> 我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”<strong>快</strong>“，占用的内存空间更<strong>“少”</strong>，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。</p>
 <p>闲话少说，现在让我们通过一个小案例开始吧！</p>
-<p>Boss：小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！</p>
-<p>小V：好，此时小V应该如何做呢？</p>
+<p><strong>Boss</strong>：小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！</p>
+<p><img src="/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg" alt width="60%/"></p>
+<p><strong>小V</strong>：好，此时小V应该如何做呢？</p>
 <p>有的同学可能会想到以下这个方法——通过分别记录执行每段前后的时间，通过两段代码消耗的时间得知执行效率（注：假设当前都是从1+2+…+100）：</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;time.h&gt;
-
-int main()
-{
-
-    time_t startTime;
-    time_t endTime;
-    time(&amp;startTime);
-
-    // 代码段一 / 代码段二
-
-    time(&amp;endTime);
-
-    printf(&quot;%ld&quot;,endTime-startTime);
-    return 0;
-}
-</code></pre><p>初看上去，小V同学的做法似乎没什么问题，但是仔细一想，这种测试方法实际上存在以下两种弊端：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">time_t</span> startTime;</span><br><span class="line">    <span class="keyword">time_t</span> endTime;</span><br><span class="line">    time(&amp;startTime);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 代码段一 / 代码段二</span></span><br><span class="line"></span><br><span class="line">    time(&amp;endTime);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%ld"</span>,endTime-startTime);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>初看上去，小V同学的做法似乎没什么问题，但是仔细一想，这种测试方法实际上存在以下两种弊端：</p>
 <ol>
-<li>测试.结果非常依赖测试环境<br>比如，我们拿同样一段代码，在i3处理器上跑和在i7处理器上跑，结果显然易见，i7处理器的执行速度要比i3处理器快，也就是消耗的时间更少。</li>
-<li><p>测试结果也可能因数据规模的大小而受到影响（注：数据规模是指输入量或者说处理的数据量的多少）<br>比如，如果测试数据规模太小，测试结果可能无法真实地反应某个算法的执行效率(详细分析见下图)</p>
-<p> 如上图所示，如若我们数据规模为1，我们就会得出函数f(n) = 2n 的执行次数低于函数g(n) = n^2的执行次数，借此得出错误的结论：f(n) 的时间消耗 &gt; g(n)的时间消耗——&gt;f(n)效率 &gt; g(n)  </p>
+<li><p><strong>测试.结果非常依赖测试环境</strong></p>
+<p>比如，我们拿同样一段代码，在i3处理器上跑和在i7处理器上跑，结果显然易见，i7处理器的执行速度要比i3处理器快，也就是消耗的时间更少。</p>
+</li>
+<li><p><strong>测试结果也可能因数据规模的大小而受到影响</strong>（注：<strong>数据规模</strong>是指<strong>输入量</strong>或者说<strong>处理的数据量的多少</strong>）</p>
+<p>比如，如果测试数据规模太小，测试结果可能无法真实地反应某个算法的执行效率(详细分析见下图)</p>
 </li>
 </ol>
-<p>那么，既然以上方法这么不靠谱(实际上，以上这种不靠谱的分析、统计算法的名字叫事后统计法），那么我们后什么靠谱的统计方法呢，这就需要我们的事前分析估算法闪亮登场咯！</p>
-<p>1、事前分析估算法</p>
-<p>事前分析估算法：在编写程序前，依据统计方法对算法进行估算，</p>
-<p>一个用高级语言编写的程序在计算机上运行时所消耗的时间取决于下列因素：</p>
-<pre><code>1、算法采用的策略、方法；
-2、编译产生的代码质量；
-3、问题的输入规模；
-4、机器执行指令的速度；
-</code></pre><p>2和4这两个因素取决于软件和硬件因素，抛开这些，我们衡量一个程序执行时间，主要是通过算法的好坏以及数据规模的大小来得知。</p>
-<p>2、何为大 O 复杂度表示法</p>
-<p>让我们通过前面Boss交给小V的那两个代码段来理解这一概念</p>
-<p>显然，第一个代码片段的执行次数为f(n) = 1+(n + 1)+n+1+1+1 = 2n + 4次，而第二个代码片段的执行次数为g(n)=1+1+1=3次 ，假设执行一次的时间为uint_time，那么我们可以得出代码片段1的执行时间T1(n) = T(f(n)) = 2n+4 unit_time，代码片段2的执行时间为 T2(n) = T(g(n)) = 3 unit_time,至此，不难看出代码的执行时间 T(n) 与每行代码的执行次数 n 成正比 ，这其实也就是我们大 O 复杂度表示法 的定义！</p>
-<pre><code>&lt;blockquote class=&quot;blockquote-center&quot;&gt;T(n)=T(f(n))&lt;/blockquote&gt;
-</code></pre><p>T(n)=O(f(n))。它表示随着问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，称作算法的渐进时间复杂度，简称时间复杂度。其中f(n)是问题规模n的某个函数。(公式中的 O，表示代码的执行时间 T(n) 与 f(n) 代码的执行时间 T(n) 与 f(n) 表达式成正比</p>
+<p><img src="/2019/03/13/分析与统计算法的执行效率和资源消耗/pic2.jpg" alt width="60%/"></p>
+<p>​    如上图所示，如若我们数据规模为1，我们就会得出函数f(n) = 2n 的执行次数低于函数g(n) = n^2的执行次数，借此得出错误的结论：f(n) 的时间消耗 &gt; g(n)的时间消耗——&gt;f(n)效率 &gt; g(n)  </p>
+<p>那么，既然以上方法这么不靠谱(实际上，以上这种不靠谱的分析、统计算法的名字叫<strong>事后统计法</strong>），那么我们后什么靠谱的统计方法呢，这就需要我们的<strong>事前分析估算法</strong>闪亮登场咯！</p>
+<h2><span id="1-事前分析估算法">1、事前分析估算法</span></h2><p><strong>事前分析估算法：</strong>在编写程序前，依据统计方法对算法进行估算，</p>
+<p>一个用高级语言编写的程序在计算机上运行时所消耗的时间取决于下列因素：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、算法采用的策略、方法；</span><br><span class="line">2、编译产生的代码质量；</span><br><span class="line">3、问题的输入规模；</span><br><span class="line">4、机器执行指令的速度；</span><br></pre></td></tr></table></figure></p>
+<p>2和4这两个因素取决于软件和硬件因素，抛开这些，我们衡量一个程序执行时间，主要是通过<strong>算法的好坏</strong>以及<strong>数据规模的大小</strong>来得知。</p>
+<h2><span id="2-何为大-o-复杂度表示法">2、何为大 O 复杂度表示法</span></h2><p>让我们通过前面Boss交给小V的那两个代码段来理解这一概念</p>
+<p><img src="/2019/03/13/分析与统计算法的执行效率和资源消耗/pic3.jpg" alt width="60%/"></p>
+<p>显然，第一个代码片段的执行次数为<strong>f(n) = 1+(n + 1)+n+1+1+1 = 2n + 4</strong>次，而第二个代码片段的执行次数为<strong>g(n)=1+1+1=3次</strong> ，假设执行一次的时间为uint_time，那么我们可以得出代码片段1的执行时间<strong>T1(n) = T(f(n)) = 2n+4</strong> unit_time，代码片段2的执行时间为 <strong>T2(n) = T(g(n)) = 3</strong> unit_time,至此，不难看出<strong>代码的执行时间 T(n) 与每行代码的执行次数 n 成正比</strong> ，这其实也就是我们<strong>大 O 复杂度表示法</strong> 的定义！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;T(n)=T(f(n))&lt;/blockquote&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>T(n)=O(f(n))</strong>。它表示随着问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，称作算法的渐进时间复杂度，简称<strong>时间复杂度</strong>。其中f(n)是问题规模n的某个函数。(公式中的 O，<strong>表示代码的执行时间 T(n) 与 f(n) 代码的执行时间 T(n) 与 f(n) 表达式成正比</strong>）</p>
+<h2><span id="3-如何推导大o阶方法">3、如何推导大O阶方法</span></h2><ol>
+<li>用常数1取代运行时间中的所有加法常数。</li>
+<li>在修改后的运行次数函数中，只保留最高阶项。</li>
+<li>如果最高阶项存在且不是1，则去除与这个项相乘的常数。</li>
+</ol>
 
           
         
