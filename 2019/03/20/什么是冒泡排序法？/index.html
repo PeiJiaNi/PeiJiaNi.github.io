@@ -116,7 +116,14 @@
 <meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/4.jpg">
 <meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/5.jpg">
 <meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/6.jpg">
-<meta property="og:updated_time" content="2019-03-20T12:03:04.762Z">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/7.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/8.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/9.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/10.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/11.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/12.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/13.jpg">
+<meta property="og:updated_time" content="2019-03-20T14:13:23.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是冒泡排序法？">
 <meta name="twitter:image" content="https://peijiani.github.io/2019/03/20/什么是冒泡排序法？/Bubble.jpg">
@@ -416,7 +423,7 @@
                 
               
 
-              <time title="创建时间：2019-03-20 16:39:10 / 修改时间：20:03:04" itemprop="dateCreated datePublished" datetime="2019-03-20T16:39:10+08:00">2019-03-20</time>
+              <time title="创建时间：2019-03-20 16:39:10 / 修改时间：22:13:23" itemprop="dateCreated datePublished" datetime="2019-03-20T16:39:10+08:00">2019-03-20</time>
             
 
             
@@ -497,12 +504,29 @@
 <p><img src="/2019/03/20/什么是冒泡排序法？/4.jpg" alt width="40%/"></p>
 <p>如此比较下来，元素6作为数列的最大元素，就好像一个气泡，从水底慢慢往上冒，浮出水面了，到了数组的最右侧</p>
 <p>此时，冒泡排序第一轮比较结束了，此时可以认为6所在的区域是一个有序区域，显然，此区域目前也只有6这一个元素</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/5.jpg" alt width="40%/"></p>
 <p><strong>第二轮循环</strong></p>
 <p>4和5比较，发现4比5小，不交换元素位置</p>
-<p>5和3比较，发现5比3小，交换元素位置</p>
-<p><img src="/2019/03/20/什么是冒泡排序法？/5.jpg" alt width="40%/"></p>
-<p>5和2比较，发现5比2小，交换元素位置</p>
+<p>5和3比较，发现5比3大，交换元素位置</p>
 <p><img src="/2019/03/20/什么是冒泡排序法？/6.jpg" alt width="40%/"></p>
+<p>5和2比较，发现5比2大，交换元素位置</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/7.jpg" alt width="40%/"></p>
+<p>5和1比较，发现5比1大，交换元素位置</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/8.jpg" alt width="40%/"></p>
+<p>至此，第二轮比较也结束了，此时有序区域中有两个元素，具体如下：</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/9.jpg" alt width="40%/"></p>
+<p>后续交换细节，也是相同，故此不在赘述，直接给出后续每轮的交换结果</p>
+<p>第三轮交换后状态如下：</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/10.jpg" alt width="40%/"></p>
+<p>第四轮交换后状态如下：</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/11.jpg" alt width="40%/"></p>
+<p>第五轮交换后状态如下：</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/12.jpg" alt width="40%/"></p>
+<p>第六轮交换后状态如下：</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/13.jpg" alt width="40%/"></p>
+<p>至此，数组已完成排序，此时所有数字序列已经是有序的了，这就是冒泡排序法排序的思路</p>
+<p>看完了思路，让我们来看看冒泡排序法如何使用代码实现吧！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 冒泡排序法</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> a 待排序数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 待排序数组长度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] array,<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n-i-<span class="number">1</span>; j++ ) &#123;</span><br><span class="line">                <span class="keyword">if</span>(array[j] &gt; array[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = array[j];</span><br><span class="line">                    array[j] = array[j+<span class="number">1</span>];</span><br><span class="line">                    array[j+<span class="number">1</span>] = tmp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;  </span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">       </span><br><span class="line">        bubbleSort(a,<span class="number">6</span>);</span><br><span class="line">        system.out.println(Arrays.toString(array));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
