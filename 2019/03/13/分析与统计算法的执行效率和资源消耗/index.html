@@ -107,26 +107,26 @@
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分析与统计算法的执行效率和资源消耗">
-<meta property="og:url" content="https://PeiJiaNi.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/index.html">
+<meta property="og:url" content="https://PeiJiaNi.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/index.html">
 <meta property="og:site_name" content="Voldemort的博客">
 <meta property="og:description" content="分析与统计算法的执行效率和资源消耗 我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”快“，占用的内存空间更“少”，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。 闲话少说，现在让我们通过一个小案例开始吧！ Boss：小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic2.jpg">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic3.jpg">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic4.jpg">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic5.png">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic6.png">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic7.png">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic8.png">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic8.png">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic9.png">
-<meta property="og:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic10.png">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic2.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic3.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic4.jpg">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic5.png">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic6.png">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic7.png">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic8.png">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic8.png">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic9.png">
+<meta property="og:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic10.png">
 <meta property="og:updated_time" content="2019-03-21T01:25:56.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分析与统计算法的执行效率和资源消耗">
 <meta name="twitter:description" content="分析与统计算法的执行效率和资源消耗 我们都知道，学数据结构的其中一个目的就是为了我们的程序能跑的更”快“，占用的内存空间更“少”，那么我们应该如何来衡量这两项呢，这就需要用到接下来介绍的方法啦。 闲话少说，现在让我们通过一个小案例开始吧！ Boss：小V，你帮我测试一下这两段完成相同功能代码，看看哪一段代码执行效率更高吧！">
-<meta name="twitter:image" content="https://peijiani.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg">
+<meta name="twitter:image" content="https://peijiani.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/pic1.jpg">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="https://PeiJiaNi.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/">
+  <link rel="canonical" href="https://PeiJiaNi.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/">
 
 
 
@@ -380,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://PeiJiaNi.coding.me/2019/03/13/分析与统计算法的执行效率和资源消耗/">
+    <link itemprop="mainEntityOfPage" href="https://PeiJiaNi.github.io/2019/03/13/分析与统计算法的执行效率和资源消耗/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PeiJiaNi">
