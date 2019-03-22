@@ -127,7 +127,12 @@
 <meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/14.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/15.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/BubbleAnimation2.gif">
-<meta property="og:updated_time" content="2019-03-21T01:32:53.752Z">
+<meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/16.jpg">
+<meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/17.jpg">
+<meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/18.jpg">
+<meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/19.jpg">
+<meta property="og:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/20.jpg">
+<meta property="og:updated_time" content="2019-03-21T16:43:07.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是冒泡排序法？">
 <meta name="twitter:image" content="https://peijiani.coding.me/2019/03/20/什么是冒泡排序法？/Bubble.jpg">
@@ -444,7 +449,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-21 09:32:53" itemprop="dateModified" datetime="2019-03-21T09:32:53+08:00">2019-03-21</time>
+                <time title="修改时间：2019-03-22 00:43:07" itemprop="dateModified" datetime="2019-03-22T00:43:07+08:00">2019-03-22</time>
               
             
           </span>
@@ -556,6 +561,21 @@
 <p>此处使用布尔类型的isSorted变量作为标志位，每轮排序之前置true，然后数列之间依次两两进行比较，如果有数据交换，则将isSorted变量置为false,如果某轮比较结束后，isSorted值仍为true，则表明冒泡操作已经没有数据交换时，已经达到完全有序，提前退出排序。</p>
 <p>再次献上动图！(通过动图也可以看到，第三轮比较结束后，发现没有数据交换时，就提前退出了冒泡排序)</p>
 <p><img src="/2019/03/20/什么是冒泡排序法？/BubbleAnimation2.gif" alt width="50%/"></p>
+<p>没想到吧，居然还能进行这样的优化，不过，其实这只是冒泡排序的优化的第一步哦，其实还可以继续优化的，让我们通过下面这个例子来发现问题并再次改善冒泡排序吧。</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/16.jpg" alt width="50%/"></p>
+<p><strong>第一轮：</strong></p>
+<p>4和1比较，发现4比1大，交换元素位置</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/17.jpg" alt width="50%/"></p>
+<p>4和3比较，发现4比3大，交换元素位置</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/18.jpg" alt width="50%/"></p>
+<p>4和2比较，发现4比2大，交换元素位置</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/19.jpg" alt width="50%/"></p>
+<p>4和5比较，发现4比5小，不交换元素位置</p>
+<p>5和6比较，发现5比6小，不交换元素位置</p>
+<p>6和7比较，发现6比7小，不交换元素位置</p>
+<p>7和8比较，发现7比8小，不交换元素位置</p>
+<p>第一轮循环结束，有序区域只有一个元素：</p>
+<p><img src="/2019/03/20/什么是冒泡排序法？/20.jpg" alt width="50%/"></p>
 
       
     </div>
