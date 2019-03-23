@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://peijiani.coding.me/2019/03/23/什么是选择排序法？/8.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/03/23/什么是选择排序法？/9.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/03/23/什么是选择排序法？/10.jpg">
-<meta property="og:updated_time" content="2019-03-23T08:40:20.242Z">
+<meta property="og:updated_time" content="2019-03-23T08:49:55.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是选择排序法？(Selection Sort)">
 <meta name="twitter:image" content="https://peijiani.coding.me/2019/03/23/什么是选择排序法？/SelectionSort.png">
@@ -437,7 +437,7 @@
                 
               
 
-              <time title="创建时间：2019-03-23 11:13:27 / 修改时间：16:40:20" itemprop="dateCreated datePublished" datetime="2019-03-23T11:13:27+08:00">2019-03-23</time>
+              <time title="创建时间：2019-03-23 11:13:27 / 修改时间：16:49:55" itemprop="dateCreated datePublished" datetime="2019-03-23T11:13:27+08:00">2019-03-23</time>
             
 
             
@@ -563,7 +563,7 @@
 <p><img src="/2019/03/23/什么是选择排序法？/10.jpg" alt width="50%/"></p>
 <p>后续操作也是如此，也就不再赘述了。</p>
 <p>接下来让我们看看选择排序法的代码实现吧！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 选择排序算法</span><br><span class="line">* 	选择排序空间复杂度为 O(1)，是一种原地排序算法。</span><br><span class="line">* 	选择排序的最好情况时间复杂度、最坏情况和平均情况时间复杂度都是O(n^2)</span><br><span class="line">* @param a 待排序数组</span><br><span class="line">* @param n 待排序数组长度</span><br><span class="line">*/</span><br><span class="line">public static void selectionSort(int[] a,int n) &#123;</span><br><span class="line">	for(int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">	    int min = n-1;             // 假设最后一个数是最小数</span><br><span class="line">	    int temp = 0;              // 用以进行数据交换</span><br><span class="line">	    for(int j = n-1; j &gt; i; j--) &#123;</span><br><span class="line">	        if(a[j-1] &lt; a[min]) &#123;  // 如果前面有数比a[min]索引的值小,则记录该数索引位置</span><br><span class="line">	            min  = j-1;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    // 一轮比较之后再将最小值与a[i]交换</span><br><span class="line">	    temp = a[min];</span><br><span class="line">	    a[min] = a[i];</span><br><span class="line">	    a[i] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 选择排序算法</span><br><span class="line">* 	选择排序空间复杂度为 O(1)，是一种原地排序算法。</span><br><span class="line">* 	选择排序的最好情况时间复杂度、最坏情况和平均情况时间复杂度都是O(n^2)</span><br><span class="line">* @param a 待排序数组</span><br><span class="line">* @param n 待排序数组长度</span><br><span class="line">*/</span><br><span class="line">public static void selectionSort(int[] a,int n) &#123;</span><br><span class="line">	for(int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">	    int min = n-1;                  // 假设最后一个数是最小数</span><br><span class="line">	    int temp = 0;                   // 用以进行数据交换</span><br><span class="line">	    for(int j = n-1; j &gt; i; j--) &#123;  // 限制无序区内进行比较</span><br><span class="line">	        if(a[j-1] &lt; a[min]) &#123;       // 如果前面有数比a[min]索引的值小,则记录该数索引位置</span><br><span class="line">	            min  = j-1;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    // 一轮比较之后再将最小值与a[i]交换</span><br><span class="line">	    temp = a[min];</span><br><span class="line">	    a[min] = a[i];</span><br><span class="line">	    a[i] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
