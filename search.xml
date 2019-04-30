@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[利用ngrok实现内网穿透]]></title>
     <url>%2F2019%2F04%2F30%2F%E5%88%A9%E7%94%A8ngrok%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%2F</url>
-    <content type="text"><![CDATA[一、什么是ngrok ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放，更加通俗的说，ngrok能够将你局域网的应用映射到公网中，在公网能被访问。 二、ngrok的下载安装官方下载安装网址：https://ngrok.com/download 1、进入网址选择相应版本进行下载 2、安装完成后，进行解压操作，然后在路径地址栏上输入 cmd 回车]]></content>
+    <content type="text"><![CDATA[一、什么是ngrok ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放，更加通俗的说，ngrok能够将你局域网的应用映射到公网中，在公网能被访问。 二、ngrok的下载安装官方下载安装网址：https://ngrok.com/download 1、进入网址选择相应版本进行下载 2、安装完成后，进行解压操作，然后在路径地址栏上输入 cmd 回车 3、点击注册用户 4、复制ngrok秘钥（后续需要用到）]]></content>
       <tags>
         <tag>工具</tag>
       </tags>
