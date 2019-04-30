@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://PeiJiaNi.coding.me/"/>
-  <updated>2019-04-30T12:47:49.766Z</updated>
+  <updated>2019-04-30T12:50:49.287Z</updated>
   <id>https://PeiJiaNi.coding.me/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>利用ngrok实现内网穿透</title>
+    <title>如何利用ngrok实现内网穿透</title>
     <link href="https://PeiJiaNi.coding.me/2019/04/30/%E5%88%A9%E7%94%A8ngrok%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
     <id>https://PeiJiaNi.coding.me/2019/04/30/利用ngrok实现内网穿透/</id>
     <published>2019-04-30T11:19:39.000Z</published>
-    <updated>2019-04-30T12:47:49.766Z</updated>
+    <updated>2019-04-30T12:50:49.287Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/2019/04/30/利用ngrok实现内网穿透/0.jpg" alt width="100%/"></p><a id="more"></a><h1><span id="一-什么是ngrok">一、什么是ngrok</span></h1><p> ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放，更加通俗的说，ngrok能够将你局域网的应用映射到公网中，在公网能被访问。</p><h1><span id="二-ngrok的下载安装">二、ngrok的下载安装</span></h1><p><strong>官方下载安装网址</strong>：<a href="https://ngrok.com/download" target="_blank" rel="noopener">https://ngrok.com/download</a></p><h2><span id="1-点击注册用户">1、点击注册用户</span></h2><p><img src="/2019/04/30/利用ngrok实现内网穿透/1.png" alt width="100%/"></p><p><img src="/2019/04/30/利用ngrok实现内网穿透/2.jpg" alt width="100%/"></p><h2><span id="2-复制ngrok秘钥后续需要用到">2、复制ngrok秘钥（后续需要用到）</span></h2><p><img src="/2019/04/30/利用ngrok实现内网穿透/3.jpg" alt width="100%/"></p><p><img src="/2019/04/30/利用ngrok实现内网穿透/4.jpg" alt width="100%/"></p><h2><span id="3-进入网址选择相应版本进行下载">3、进入网址选择相应版本进行下载</span></h2><p><img src="/2019/04/30/利用ngrok实现内网穿透/5.jpg" alt width="100%/"></p><h2><span id="4-下载完成后进行解压操作然后在路径地址栏上输入-cmd-回车">4、下载完成后，进行解压操作，然后在路径地址栏上输入 cmd 回车</span></h2><p><img src="/2019/04/30/利用ngrok实现内网穿透/6.jpg" alt width="100%/"></p><p><img src="/2019/04/30/利用ngrok实现内网穿透/7.jpg" alt width="100%/"></p><h2><span id="5-在cmd窗口中输入ngrok-authtoken-复制的秘钥-然后回车确定">5、在cmd窗口中输入ngrok authtoken 复制的秘钥 然后回车确定</span></h2><p><img src="/2019/04/30/利用ngrok实现内网穿透/8.jpg" alt width="100%/"></p><h2><span id="然后输入ngrok-help-查看认证情况">、然后输入ngrok help 查看认证情况</span></h2><p><img src="/2019/04/30/利用ngrok实现内网穿透/9.jpg" alt width="100%/"></p><h2><span id="7-解析内网ip以tomcat为例">7、解析内网ip，以tomcat为例</span></h2><h3><span id="71-启动tomcat服务">7.1、启动tomcat服务</span></h3><p><img src="/2019/04/30/利用ngrok实现内网穿透/10.jpg" alt width="100%/"><br><img src="/2019/04/30/利用ngrok实现内网穿透/11.jpg" alt width="100%/"></p><h3><span id="72-cmd窗口中中输入-ngrok-http-tomcat端口号默认为8080即可出现映射的域名">7.2、cmd窗口中中输入 ngrok http tomcat端口号(默认为8080)即可出现映射的域名</span></h3><p><img src="/2019/04/30/利用ngrok实现内网穿透/12.jpg" alt width="100%/"></p><h3><span id="73-利用生成的域名进行访问测试">7.3、利用生成的域名进行访问测试</span></h3><p><img src="/2019/04/30/利用ngrok实现内网穿透/13.jpg" alt width="100%/"></p><h1><span id="三-使用总结">三、使用总结</span></h1><p><strong>优点：</strong> 下载安装及使用简单<br><strong>缺点：</strong>由于是国外的服务器，访问起来比较慢，不太稳定，并且映射的外网地址每次都会改变</p>]]></content>
     
