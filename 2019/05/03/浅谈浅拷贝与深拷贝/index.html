@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://peijiani.coding.me/2019/05/03/浅谈浅拷贝与深拷贝/0.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/05/03/浅谈浅拷贝与深拷贝/1.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/05/03/浅谈浅拷贝与深拷贝/2.jpg">
-<meta property="og:updated_time" content="2019-05-03T07:18:47.650Z">
+<meta property="og:updated_time" content="2019-05-03T07:23:04.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈浅拷贝与深拷贝">
 <meta name="twitter:image" content="https://peijiani.coding.me/2019/05/03/浅谈浅拷贝与深拷贝/0.jpg">
@@ -429,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2019-05-03 12:33:39 / 修改时间：15:18:47" itemprop="dateCreated datePublished" datetime="2019-05-03T12:33:39+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-03 12:33:39 / 修改时间：15:23:04" itemprop="dateCreated datePublished" datetime="2019-05-03T12:33:39+08:00">2019-05-03</time>
             
 
             
@@ -562,7 +562,8 @@
 <p>倘若真的要实现完全的深拷贝，那么在对Head对象进行拷贝的同时，也需要对其中组合的Face对象进行拷贝（即在拷贝Head类型的同时，也要创建一个新的Face类的对象，并复制其内容）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">static class Head implements Cloneable&#123;</span><br><span class="line">    public  Face face;</span><br><span class="line"></span><br><span class="line">    public Head() &#123;&#125;</span><br><span class="line">    public Head(Face face)&#123;this.face = face;&#125;</span><br><span class="line">    @Override</span><br><span class="line">    protected Object clone() throws CloneNotSupportedException &#123;</span><br><span class="line">        //return super.clone();</span><br><span class="line">        Head newHead = (Head) super.clone();</span><br><span class="line">        newHead.face = (Face) this.face.clone();</span><br><span class="line">        return newHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">static class Face implements Cloneable&#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected Object clone() throws CloneNotSupportedException &#123;</span><br><span class="line">        return super.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">body1 == body2 : false</span><br><span class="line">body1.head == body2.head : false</span><br><span class="line">body1.head.face == body2.head.face : false</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 <p>由此也可得出，要实现完全的深拷贝是比较麻烦的，如要实现完全的深拷贝，只能将组合中的对象一级一级的显式拷贝，所以创建彻底的深拷贝是非常麻烦的，尤其是在引用关系非常复杂的情况下， 或者在引用链的某一级上引用了一个第三方的对象， 而这个对象没有实现clone方法， 那么在它之后的所有引用的对象都是被共享的。    </p>
-<p>最后笔者想说，理解深拷贝与浅拷贝的区别，还是相当有必要的，如在创建不可变对象时，可能对程序有着微妙的影响，可能会决定我们创建的不可变对象是不是真的不可变。关于不可变类，可参加另外一篇文章。<br>（参考博客：<a href="https://segmentfault.com/a/1190000010648514）" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010648514）</a></p>
+<p>最后笔者想说，理解深拷贝与浅拷贝的区别，还是相当有必要的，如在创建不可变对象时，可能对程序有着微妙的影响，可能会决定我们创建的不可变对象是不是真的不可变。关于不可变类，可参加另外一篇文章。</p>
+<p>（参考博客：<a href="https://segmentfault.com/a/1190000010648514）" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010648514）</a></p>
 
       
     </div>
