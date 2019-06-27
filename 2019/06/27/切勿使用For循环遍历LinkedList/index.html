@@ -111,7 +111,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/0.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/1.jpg">
-<meta property="og:updated_time" content="2019-06-27T05:15:50.181Z">
+<meta property="og:updated_time" content="2019-06-27T05:20:32.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="切勿使用For循环遍历LinkedList">
 <meta name="twitter:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/0.jpg">
@@ -428,7 +428,7 @@
                 
               
 
-              <time title="创建时间：2019-06-27 09:48:02 / 修改时间：13:15:50" itemprop="dateCreated datePublished" datetime="2019-06-27T09:48:02+08:00">2019-06-27</time>
+              <time title="创建时间：2019-06-27 09:48:02 / 修改时间：13:20:32" itemprop="dateCreated datePublished" datetime="2019-06-27T09:48:02+08:00">2019-06-27</time>
             
 
             
@@ -580,14 +580,14 @@
 <p>先来看看ArrayList的get方法源码吧：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	RangeCheck(index);</span><br><span class="line">	<span class="keyword">return</span> (E) elementData[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>从源码中不难看出，其实ArrayList的get方法只是从数组中取指定位置上的元素值，然后作为返回值返回而已。也就是说<font color="#ff0000"><b>ArrayList的get方法的时间复杂度为O(1),所以使用For循环遍历ArrayList的时间复杂度为O(n)，n为ArrayList的容量。</b></font>    这也就是说明，get方法的时间复杂度是一个常数，和数组的大小并没有给出关系，也就是说想要获取某个位置的数据，只需要给出该数据所在处的索引值，即可定位到该数据。</p>
-<p>这样说可能有的同学还不是很能理解，下面举个小小的栗子来解释下</p>
+<p>这样说可能有的同学还不是很能理解为什么get方法的时间复杂度是O(1)，下面举个小小的栗子来解释下</p>
 <p>通过阅读上面的内容，我们知道ArrayList底层实现是使用数组这种数据结构实现的，那我们来看看数组是如何获取指定索引处的值的。</p>
 <p>假如有如下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = &#123;1,2,3&#125;;</span><br></pre></td></tr></table></figure>
 <p>我们知道，在计算机底层，每个数据都是有地址的，就好像我们家里的门牌号一样。那么我写了这样一行代码，计算机内部会如何做呢？</p>
 <p>首先由于Java中一个int型数据是4个字节，而我们所声明的nums数组的长度为3，也就是该数组中有三个int类型的元素，此时计算机就会在内存在开辟一块连续的、足以存放3个4字节也就是12字节的数组的内存空间，并返回该内存空间的首地址。好比首地址为0x00,那么内存中的存放情况即如下图所示：</p>
 <p><img src="/2019/06/27/切勿使用For循环遍历LinkedList/1.jpg" alt width="50%/"></p>
-<p>了解了数组在内存中是如何存储值的，那么根据索引值获取元素值就很简单了，好比取ints[1]的时候，计算机就会算出ints[1]的数据是存放在以0x04开头，占据4个字节空间的内存中，因此，计算机会从0x04~0x07这块地址空间中读取数据出来。<br>我们可以看到该过程和数组的大小并没有任何关系，无非就是通过公式 <font color="#ff0000"><b>数组首地址+sizeof(type)*下标</b></font>算出指定元素的起始地址，然后去该地址中取数据，因此我们看到使用普通for循环遍历ArrayList的速度很快，也很稳定。</p>
+<p>了解了数组在内存中是如何存储值的，那么根据索引值获取元素值就很简单了，好比取ints[1]的时候，计算机就会算出ints[1]的数据是存放在以0x04开头，占据4个字节空间的内存中，因此，计算机会从0x04~0x07这块地址空间中读取数据出来。<br>我们可以看到该过程和数组的大小并没有任何关系，无非就是通过公式 <font color="#ff0000"><b>数组首地址+sizeof(type)*下标</b></font>算出指定元素的起始地址，然后去该地址中取数据，这也就是为什么get方法的时间复杂度为O(1)的原因所在了。</p>
 <p>再来看看LinkedList的get源码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> entry(index).element;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> Entry&lt;E&gt; <span class="title">entry</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (index &lt; <span class="number">0</span> || index &gt;= size)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException(<span class="string">"Index: "</span>+index+</span><br><span class="line">	                                     <span class="string">", Size: "</span>+size);</span><br><span class="line">	Entry&lt;E&gt; e = header;</span><br><span class="line">	<span class="keyword">if</span> (index &lt; (size &gt;&gt; <span class="number">1</span>)) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= index; i++)</span><br><span class="line">			e = e.next;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = size; i &gt; index; i--)</span><br><span class="line">			e = e.previous;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> e;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>为什么使用普通For循环遍历LinkedList会这么慢呢，原因其实就在于10、11行，通过观察我们可以得出<font color="#ff0000"><b>LinkedList在get任何一个位置的数据的时候，都会把前面的数据走一遍</b></font><br>即如下所示：</p>
