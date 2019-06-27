@@ -111,7 +111,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/0.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/1.jpg">
-<meta property="og:updated_time" content="2019-06-27T04:55:51.002Z">
+<meta property="og:updated_time" content="2019-06-27T05:15:50.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="切勿使用For循环遍历LinkedList">
 <meta name="twitter:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/0.jpg">
@@ -428,7 +428,7 @@
                 
               
 
-              <time title="创建时间：2019-06-27 09:48:02 / 修改时间：12:55:51" itemprop="dateCreated datePublished" datetime="2019-06-27T09:48:02+08:00">2019-06-27</time>
+              <time title="创建时间：2019-06-27 09:48:02 / 修改时间：13:15:50" itemprop="dateCreated datePublished" datetime="2019-06-27T09:48:02+08:00">2019-06-27</time>
             
 
             
@@ -502,7 +502,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.3k</span>
+                <span title="本文字数">4.4k</span>
               
 
               
@@ -579,7 +579,7 @@
 <p>这其实关乎到ArrayList和LinkedList底层实现的差别——ArrayLis底层是使用数组来实现的，而LinkedList底层是使用双向链表实现的，底层实现所依赖的数据结构不同，也使得其遍历方式也有所不同。</p>
 <p>先来看看ArrayList的get方法源码吧：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	RangeCheck(index);</span><br><span class="line">	<span class="keyword">return</span> (E) elementData[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从源码中不难看出，其实ArrayList的get方法只是从数组中取指定位置上的元素值，然后作为返回值返回而已。也就是说<font color="#ff0000"><b>ArrayList的get方法的时间复杂度为O(1),所以使用For循环遍历ArrayList的时间复杂度为O(N)，N为ArrayList的容量。</b></font>    这也就是说明，get方法的时间复杂度是一个常数，和数组的大小并没有给出关系，也就是说想要获取某个位置的数据，只需要给出该数据所在处的索引值，即可定位到该数据。</p>
+<p>从源码中不难看出，其实ArrayList的get方法只是从数组中取指定位置上的元素值，然后作为返回值返回而已。也就是说<font color="#ff0000"><b>ArrayList的get方法的时间复杂度为O(1),所以使用For循环遍历ArrayList的时间复杂度为O(n)，n为ArrayList的容量。</b></font>    这也就是说明，get方法的时间复杂度是一个常数，和数组的大小并没有给出关系，也就是说想要获取某个位置的数据，只需要给出该数据所在处的索引值，即可定位到该数据。</p>
 <p>这样说可能有的同学还不是很能理解，下面举个小小的栗子来解释下</p>
 <p>通过阅读上面的内容，我们知道ArrayList底层实现是使用数组这种数据结构实现的，那我们来看看数组是如何获取指定索引处的值的。</p>
 <p>假如有如下代码：</p>
@@ -595,10 +595,11 @@
 <p>2、get(1)，直接拿到0位的Node0的地址，从0位的Node0中找到下一个1位的Node1的地址，找到Node1，拿到Node1里面的数据</p>
 <p>3、get(2)，直接拿到0位的Node0的地址，从0位的Node0中找到下一个1位的Node1的地址，找到Node1，从1位的Node1中找到下一个2位的Node2的地址，找到Node2，拿到Node2里面的数据。</p>
 <p>后面的以此类推。</p>
-<p>故此不难得出<font color="#ff0000"><b>LinkedList的get方法的时间复杂度为O(n),所以使用For循环遍历LinikedList的时间复杂度为O(N2)，N为LinkedList的容量。</b></font></p>
+<p>故此不难得出<font color="#ff0000"><b>LinkedList的get方法的时间复杂度为O(n),所以使用For循环遍历LinikedList的时间复杂度为O(n^2)，n为LinkedList的容量。</b></font></p>
 <p>通过对比使用普通For循环遍历ArrayList和LinkedList的时间复杂度，也就明白了为什么ArrayList的速度优于LinkedList</p>
 <p>再来看看问题二，<b>如若使用For循环遍历LinkedList是一种糟糕的做法，那我该用什么方法来遍历LinkedList呢？</b></p>
 <p>答案是：使用迭代器或者foreach循环（foreach循环的内部实现就是迭代器）去遍历LinkedList即可</p>
+<p>原因：迭代器中因为next引用的存在使得遍历无需每次都把前面的数据走一遍，故<font color="#ff0000"><b>使用迭代器遍历LinikedList的时间复杂度为O(n)，n为LinkedList的容量。</b></font></p>
 
       
     </div>
@@ -843,7 +844,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
   
 </div>
 
