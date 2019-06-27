@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://PeiJiaNi.coding.me/"/>
-  <updated>2019-05-03T07:23:04.308Z</updated>
+  <updated>2019-06-27T01:58:27.803Z</updated>
   <id>https://PeiJiaNi.coding.me/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>切勿使用For循环遍历LinkedList</title>
+    <link href="https://PeiJiaNi.coding.me/2019/06/27/%E5%88%87%E5%8B%BF%E4%BD%BF%E7%94%A8For%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86LinkedList/"/>
+    <id>https://PeiJiaNi.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/</id>
+    <published>2019-06-27T01:48:02.000Z</published>
+    <updated>2019-06-27T01:58:27.803Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2019/06/27/切勿使用For循环遍历LinkedList/利用ngrok实现内网穿透/0.jpg" alt width="100%/"><br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2019/06/27/切勿使用For循环遍历LinkedList/利用ngrok实现内网穿透/0.jpg&quot; alt width=&quot;100%/&quot;&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://PeiJiaNi.coding.me/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://PeiJiaNi.coding.me/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈浅拷贝与深拷贝</title>
