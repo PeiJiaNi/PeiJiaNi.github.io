@@ -111,7 +111,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/0.jpg">
 <meta property="og:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/1.jpg">
-<meta property="og:updated_time" content="2019-06-27T04:30:43.122Z">
+<meta property="og:updated_time" content="2019-06-27T04:31:54.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="切勿使用For循环遍历LinkedList">
 <meta name="twitter:image" content="https://peijiani.coding.me/2019/06/27/切勿使用For循环遍历LinkedList/0.jpg">
@@ -428,7 +428,7 @@
                 
               
 
-              <time title="创建时间：2019-06-27 09:48:02 / 修改时间：12:30:43" itemprop="dateCreated datePublished" datetime="2019-06-27T09:48:02+08:00">2019-06-27</time>
+              <time title="创建时间：2019-06-27 09:48:02 / 修改时间：12:31:54" itemprop="dateCreated datePublished" datetime="2019-06-27T09:48:02+08:00">2019-06-27</time>
             
 
             
@@ -575,7 +575,7 @@
 <p>从运行结果我们看到，随着List容量的不断增长，ArrayList的遍历耗费时间相对比较稳定，而LinkedList的遍历几乎是爆发式的增长，为什么会出现这样的情况呢？</p>
 <p>让我们先抛出两个问题，然后再逐一击破：</p>
 <p><b>问题一：</b>为什么ArrayList使用For循环遍历速度快于LinkedList呢？<br><b>问题二：</b>如若使用For循环遍历LinkedList是一种糟糕的做法，那我该用什么方法来遍历LinkedList呢？</p>
-<p>首先来看看问题一，<b>为什么ArrayList使用For循环遍历速度快于LinkedList呢？</b></p>
+<h1><span id="三-问题剖析">三、问题剖析</span></h1><p>首先来看看问题一，<b>为什么ArrayList使用For循环遍历速度快于LinkedList呢？</b></p>
 <p>这其实关乎到ArrayList和LinkedList底层实现的差别——ArrayLis底层是使用数组来实现的，而LinkedList底层是使用双向链表实现的，底层实现所依赖的数据结构不同，也使得其遍历方式也有所不同。</p>
 <p>先来看看ArrayList的get方法源码吧：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">	RangeCheck(index);</span><br><span class="line">	<span class="keyword">return</span> (E) elementData[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -791,7 +791,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">一、普通For循环遍历ArrayList和LinkedList</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">二、性能对比</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">一、普通For循环遍历ArrayList和LinkedList</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">二、性能对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">三、问题剖析</span></a></li></ol></div>
             
 
           </div>
