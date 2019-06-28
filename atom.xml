@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://PeiJiaNi.coding.me/"/>
-  <updated>2019-06-27T05:27:25.772Z</updated>
+  <updated>2019-06-28T03:38:06.362Z</updated>
   <id>https://PeiJiaNi.coding.me/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>糖块一 —— switch 支持 String与枚举</title>
+    <link href="https://PeiJiaNi.coding.me/2019/06/28/%E7%B3%96%E5%9D%97%E4%B8%80-%E2%80%94%E2%80%94-switch-%E6%94%AF%E6%8C%81-String%E4%B8%8E%E6%9E%9A%E4%B8%BE/"/>
+    <id>https://PeiJiaNi.coding.me/2019/06/28/糖块一-——-switch-支持-String与枚举/</id>
+    <published>2019-06-28T03:07:36.000Z</published>
+    <updated>2019-06-28T03:38:06.362Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2019/06/28/糖块一-——-switch-支持-String与枚举/0.jpeg" alt width="100%/"><br><a id="more"></a></p><h1><span id="一-语法糖">一、语法糖</span></h1><p><font color="#EF8BF3"><b>语法糖</b></font>（Syntactic sugar），也译为糖衣语法，是由英国计算机科学家彼得·兰丁发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能没有影响，但是更方便程序员使用。语法糖让程序更加简洁，有更高的可读性。</p><p>由此也可也得出，一门语言语法糖越多，也会越便于程序员编程。</p><p>Java 中最常用的语法糖主要有<b>泛型、变长参数、、自动拆装箱、内部类</b>等。本系列文章就来分析一下这些语法糖，一步一步剥去糖衣，看看其本质。</p><h1><span id="二-糖块-switch-支持-string与枚举">二、糖块 —— switch 支持 String与枚举</span></h1><p>在Java 7以前，Java中的swith自身原本就支持基本类型，但是并不支持String和枚举类型。比如int、、byte、char等。对于整数类型，直接进行数值的比较。对于字符类型则是比较其ascii码。所以，在当时，对于编译器来说，switch中其实只能使用整型，任何类型的比较都要转换成整型。</p><p>从Java 7就开始，Switch就支持String了，让我们来看看其剥开糖衣，看看其背后的实现原理吧！</p><p>测试代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwitchDemo</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">String str = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">switch</span> (str) &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">"hello"</span>:</span><br><span class="line">System.out.println(<span class="string">"hello"</span>);</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">"world"</span>:</span><br><span class="line">System.out.println(<span class="string">"world"</span>);</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><font color="#EF8BF3">反编译</font>后如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class SwitchDemo</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public SwitchDemo()</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[])</span><br><span class="line">    &#123;</span><br><span class="line">        String str = &quot;hello&quot;;</span><br><span class="line">        String s;</span><br><span class="line">        switch((s = str).hashCode())</span><br><span class="line">        &#123;</span><br><span class="line">        default:</span><br><span class="line">            break;</span><br><span class="line"></span><br><span class="line">        case 99162322: </span><br><span class="line">            if(s.equals(&quot;hello&quot;))</span><br><span class="line">                System.out.println(&quot;hello&quot;);</span><br><span class="line">            break;</span><br><span class="line"></span><br><span class="line">        case 113318802: </span><br><span class="line">            if(s.equals(&quot;world&quot;))</span><br><span class="line">                System.out.println(&quot;world&quot;);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>查看反编译之后的代码，我们就知道了原来Switch对字符串的支持是通过<font color="#F46334">hashCode()</font>和<font color="#F46334">equals()</font>方法来实现的。</p><p>仔细观察可以发现，首先比较的是哈希值，哈希值相同再使用equals()进行安全检查，使用equals()进行安全检查是很有必要的——因为哈希可能会发生碰撞（好比在本例中，两个值不同的字符串被映射到同一个哈希值），所以只有通过安全检查了，我们才能认为是匹配的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2019/06/28/糖块一-——-switch-支持-String与枚举/0.jpeg&quot; alt width=&quot;100%/&quot;&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://PeiJiaNi.coding.me/categories/Java/"/>
+    
+      <category term="Java语法糖" scheme="https://PeiJiaNi.coding.me/categories/Java/Java%E8%AF%AD%E6%B3%95%E7%B3%96/"/>
+    
+    
+      <category term="Java" scheme="https://PeiJiaNi.coding.me/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>切勿使用For循环遍历LinkedList</title>
