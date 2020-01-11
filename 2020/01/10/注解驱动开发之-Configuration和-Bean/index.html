@@ -103,16 +103,19 @@
 
 
 
-  <meta name="description" content="Talk is Cheep,Show me the Code!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Voldemort的博客">
-<meta property="og:url" content="https://PeiJiaNi.coding.me/archives/index.html">
+  <meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="注解驱动开发之@Configuration和@Bean">
+<meta property="og:url" content="https://PeiJiaNi.coding.me/2020/01/10/注解驱动开发之-Configuration和-Bean/index.html">
 <meta property="og:site_name" content="Voldemort的博客">
-<meta property="og:description" content="Talk is Cheep,Show me the Code!">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://peijiani.coding.me/2020/01/10/注解驱动开发之-Configuration和-Bean/3.webp">
+<meta property="og:image" content="https://peijiani.coding.me/2020/01/10/注解驱动开发之-Configuration和-Bean/1.jpg">
+<meta property="og:image" content="https://peijiani.coding.me/2020/01/10/注解驱动开发之-Configuration和-Bean/2.jpg">
+<meta property="og:updated_time" content="2020-01-11T06:36:37.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Voldemort的博客">
-<meta name="twitter:description" content="Talk is Cheep,Show me the Code!">
+<meta name="twitter:title" content="注解驱动开发之@Configuration和@Bean">
+<meta name="twitter:image" content="https://peijiani.coding.me/2020/01/10/注解驱动开发之-Configuration和-Bean/3.webp">
 
 
 
@@ -121,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="https://PeiJiaNi.coding.me/archives/">
+  <link rel="canonical" href="https://PeiJiaNi.coding.me/2020/01/10/注解驱动开发之-Configuration和-Bean/">
 
 
 
@@ -131,7 +134,7 @@
   };
 </script>
 
-  <title>归档 | Voldemort的博客</title>
+  <title>注解驱动开发之@Configuration和@Bean | Voldemort的博客</title>
   
 
 
@@ -181,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/PeiJiaNi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -292,7 +295,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -363,428 +366,299 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://PeiJiaNi.coding.me/2020/01/10/注解驱动开发之-Configuration和-Bean/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PeiJiaNi">
+      <meta itemprop="description" content="Talk is Cheep,Show me the Code!">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Voldemort的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">注解驱动开发之@Configuration和@Bean
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-10 14:30:46" itemprop="dateCreated datePublished" datetime="2020-01-10T14:30:46+08:00">2020-01-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-11 14:36:37" itemprop="dateModified" datetime="2020-01-11T14:36:37+08:00">2020-01-11</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 13 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/01/11/注解驱动开发之-Component注解/" itemprop="url">
-            
-              <span itemprop="name">注解驱动开发之@Component注解</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-11T12:12:52+08:00" content="2020-01-11">
-          01-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2020/01/10/注解驱动开发之-Configuration和-Bean/" itemprop="url">
-            
-              <span itemprop="name">注解驱动开发之@Configuration和@Bean</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-10T14:30:46+08:00" content="2020-01-10">
-          01-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/11/09/什么是测试？/" itemprop="url">
             
-              <span itemprop="name">什么是测试？</span>
             
-          </a>
-        
-      </h2>
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2020/01/10/注解驱动开发之-Configuration和-Bean/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/01/10/注解驱动开发之-Configuration和-Bean/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-09T15:17:18+08:00" content="2019-11-09">
-          11-09
-        </time>
-      </div>
+          
+          
+            <span id="/2020/01/10/注解驱动开发之-Configuration和-Bean/" class="leancloud_visitors" data-flag-title="注解驱动开发之@Configuration和@Bean">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
 
-    </header>
-  </article>
+          
 
+          
+            <div class="post-symbolscount">
+              
 
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/07/24/以太网交换机的转发原理/" itemprop="url">
-            
-              <span itemprop="name">以太网交换机的转发原理</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T13:02:44+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/28/糖块一-——-switch-支持-String与枚举/" itemprop="url">
-            
-              <span itemprop="name">糖块一 —— switch 支持 String与枚举</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-28T11:07:36+08:00" content="2019-06-28">
-          06-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p><img src="/2020/01/10/注解驱动开发之-Configuration和-Bean/3.webp" alt width="100%/"><br><a id="more"></a></p>
+<h1><span id="1-使用xml的方式配置">1、使用XML的方式配置</span></h1><ul>
+<li><strong>编写pojo类Person</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.bean;</span><br><span class="line"><span class="keyword">import</span> lombok.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>编写beans.xml配置文件</strong></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.atguigu.bean.Person"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">value</span>=<span class="string">"18"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"张三"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>从Spring IOC容器中获取bean对象</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ClassPathXmlApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"classpath:beans.xml"</span>);</span><br><span class="line">	Person person = applicationContext.getBean(<span class="string">"person"</span>, Person.class);</span><br><span class="line">	System.out.println(person);</span><br><span class="line">	<span class="comment">// 获取指定对象在Spring IOC容器中的name</span></span><br><span class="line">	<span class="comment">// String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);</span></span><br><span class="line">	<span class="comment">// for (String name:beanNamesForType) &#123;</span></span><br><span class="line">	<span class="comment">//     System.out.println(name);</span></span><br><span class="line">	<span class="comment">// &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>运行结果如下：</strong></li>
+</ul>
+<p><img src="/2020/01/10/注解驱动开发之-Configuration和-Bean/1.jpg" alt="img"></p>
+<h1><span id="2-使用注解的方式配bean的开发方式">2、使用注解的方式配bean的开发方式</span></h1><ul>
+<li><strong>编写pojo类Person</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.bean;</span><br><span class="line"><span class="keyword">import</span> lombok.*;</span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>编写配置类MainConfig（相当于xml配置文件）</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 配置类 == 配置文件</span><br><span class="line">@Configuration  // 告诉Spring这是一个配置类</span><br><span class="line">public class MainConfig &#123;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 给容器注册一个Bean；类型为返回值类型，id默认是用方法名作为id</span><br><span class="line">   * @return</span><br><span class="line">   */</span><br><span class="line">  @Bean(&quot;person&quot;)</span><br><span class="line">  public Person getPerson() &#123;</span><br><span class="line">      return new Person(&quot;李四&quot;,20);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>从Spring IOC容器中获取bean对象</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	AnnotationConfigApplicationContext applicationContext = <span class="keyword">new</span> AnnotationConfigApplicationContext(MainConfig.class);</span><br><span class="line">	Person person = applicationContext.getBean(<span class="string">"person"</span>, Person.class);</span><br><span class="line">	System.out.println(person);</span><br><span class="line">	<span class="comment">// 获取指定对象在Spring IOC容器中的name</span></span><br><span class="line">	<span class="comment">// String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);</span></span><br><span class="line">	<span class="comment">// for (String name:beanNamesForType) &#123;</span></span><br><span class="line">	<span class="comment">//     System.out.println(name);</span></span><br><span class="line">	<span class="comment">// &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>运行结果如下：</strong></li>
+</ul>
+<p><img src="/2020/01/10/注解驱动开发之-Configuration和-Bean/2.jpg" alt="img"></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/27/切勿使用For循环遍历LinkedList/" itemprop="url">
-            
-              <span itemprop="name">切勿使用For循环遍历LinkedList</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-27T09:48:02+08:00" content="2019-06-27">
-          06-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/03/浅谈浅拷贝与深拷贝/" itemprop="url">
-            
-              <span itemprop="name">浅谈浅拷贝与深拷贝</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-03T12:33:39+08:00" content="2019-05-03">
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/30/利用ngrok实现内网穿透/" itemprop="url">
-            
-              <span itemprop="name">如何利用ngrok实现内网穿透</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-30T19:19:39+08:00" content="2019-04-30">
-          04-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/23/什么是选择排序法？/" itemprop="url">
-            
-              <span itemprop="name">什么是选择排序法？(Selection Sort)</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-23T11:13:27+08:00" content="2019-03-23">
-          03-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/20/什么是冒泡排序法？/" itemprop="url">
-            
-              <span itemprop="name">什么是冒泡排序法？(BubbleSort)</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-20T16:39:10+08:00" content="2019-03-20">
-          03-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/09/什么是测试？/" rel="next" title="什么是测试？">
+                <i class="fa fa-chevron-left"></i> 什么是测试？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/11/注解驱动开发之-Component注解/" rel="prev" title="注解驱动开发之@Component注解">
+                注解驱动开发之@Component注解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -805,8 +679,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -907,6 +790,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">1、使用XML的方式配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">2、使用注解的方式配bean的开发方式</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1056,6 +956,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
 
   
 
@@ -1095,6 +999,8 @@
 
 
 
+
+  
 
 
   
@@ -1427,38 +1333,37 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1483,9 +1388,7 @@
             });
           };
           
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
+            addCount(Counter);
           
         });
     });
